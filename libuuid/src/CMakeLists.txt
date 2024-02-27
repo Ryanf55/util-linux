@@ -1,0 +1,29 @@
+target_sources(uuid
+  PUBLIC
+    uuidd.h
+    uuid.h
+  PRIVATE
+    clear.c
+    compare.c
+    copy.c
+    gen_uuid.c
+    isnull.c
+    pack.c
+    parse.c
+    predefined.c
+    unpack.c
+    unparse.c
+    uuidP.h
+    uuid_time.c
+)
+
+add_executable(test_uuid)
+target_sources(test_uuid
+  PRIVATE
+    test_uuid.c
+)
+
+target_link_libraries(uuid
+  PRIVATE
+    ${PROJECT_NAME}::${PROJECT_NAME}     
+)

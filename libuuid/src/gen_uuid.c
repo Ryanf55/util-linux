@@ -53,6 +53,7 @@
 #include <sys/time.h>
 #endif
 #include <sys/stat.h>
+// TODO where is HAVE_SYS_FILE_H defined? Is this something CMake should do?
 #ifdef HAVE_SYS_FILE_H
 #include <sys/file.h>
 #endif

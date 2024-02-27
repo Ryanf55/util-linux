@@ -414,7 +414,8 @@ fail:
 
 static inline int xusleep(useconds_t usec)
 {
-#ifdef HAVE_NANOSLEEP
+// https://man7.org/linux/man-pages/man2/nanosleep.2.html
+#if _POSIX_C_SOURCE >= 199309L
 	struct timespec waittime = {
 		.tv_sec   =  usec / 1000000L,
 		.tv_nsec  = (usec % 1000000L) * 1000

@@ -88,3 +88,12 @@ Static linking
 		# chroot . ./mount.static -v -f -n -ouid=kzak /mnt/win
 		LABEL=/mnt/win on /mnt/win type vfat (rw,uid=kzak)
 							 ^^^^^^^^
+
+CMake
+	CMake requires version 3.24. If you run Ubuntu, you can install a newer version here:
+	https://apt.kitware.com/
+
+
+	Build:
+		cmake -S . -B build
+		cmake --build build
